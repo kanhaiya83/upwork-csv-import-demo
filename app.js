@@ -32,7 +32,11 @@ app.post("/upload",async (req,res)=>{
 
 app.get("/saved",(req,res)=>{
     Model.find().then(data=>{
-        res.send(data)
+        const dataToSend=data.map(({sheetName,rowData})=>{
+            return {sheetName,rowData}
+        })
+        res.send(dataToSend)
     })
 })
+app.use(express.static(__dirname + "/vite-project/dist"))
 app.listen(process.env.PORT || 5000)
