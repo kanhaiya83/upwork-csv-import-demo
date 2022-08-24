@@ -39,9 +39,9 @@ app.get("/saved",(req,res)=>{
     })
 })
 app.use(express.static(__dirname + "/vite-project/dist"))
-app.delete("/",async(req,res)=>{
+// app.delete("/",async(req,res)=>{
 
-await Model.deleteMany({})
-res.send("success")
-})
+// await Model.deleteMany({})
+// res.send("success")
+// })
 app.listen(process.env.PORT || 5000)
