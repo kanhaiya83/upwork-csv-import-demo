@@ -2,7 +2,7 @@ const express=require("express")
 
 var cors = require("cors");
 const app=express()
-const {Model} = require("./config/database")
+const {Model} = require("./config/database");
 var corsOptions = {
     origin: "*"
   };
@@ -39,4 +39,9 @@ app.get("/saved",(req,res)=>{
     })
 })
 app.use(express.static(__dirname + "/vite-project/dist"))
+app.delete("/",async(req,res)=>{
+
+await Model.deleteMany({})
+res.send("success")
+})
 app.listen(process.env.PORT || 5000)
