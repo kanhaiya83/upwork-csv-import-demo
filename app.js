@@ -33,7 +33,7 @@ app.post("/upload",async (req,res)=>{
 app.get("/saved",(req,res)=>{
     Model.find().then(data=>{
         const dataToSend=data.map(({sheetName,rowData})=>{
-            return {sheetName,rowData}
+            return {sheetName,rowData:rowData.map(d=>({name:d.name,age:d.age}))}
         })
         res.send(dataToSend)
     })
