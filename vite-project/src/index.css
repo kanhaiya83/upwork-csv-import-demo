@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.container{
+
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.upload-btn{
+  background-color: #007AFE;
+  border: none;
+  border-radius: 100rem;
+  color: white;
+  font-size: 2rem;
+  padding: 0.7rem  3rem;
+  text-transform: uppercase;
+  margin: 2rem 0 1rem;
+}
+
+.upload-btn.ready:hover{
+  cursor: pointer;
+}
